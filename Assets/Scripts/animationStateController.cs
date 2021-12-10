@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class animationStateController : MonoBehaviour
 {
-    Animator animator;
+    public Animator animator;
     int isWalkingHash;
     int isRunningHash;
     int isJumpingHash;
     int isFallingHash;
+
+    public GameObject player;
 
     void Start()
     {

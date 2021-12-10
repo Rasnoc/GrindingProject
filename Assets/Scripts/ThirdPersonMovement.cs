@@ -20,8 +20,8 @@ public class ThirdPersonMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     public LayerMask grindRailMask;
-    bool isGrounded;
-    bool isGrinding;
+    public bool isGrounded;
+    public bool isGrinding;
 
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
@@ -31,11 +31,11 @@ public class ThirdPersonMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //isGrinding = Physics.CheckSphere(groundCheck.position, groundDistance, grindRailMask);
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        isGrinding = Physics.CheckSphere(groundCheck.position, groundDistance, grindRailMask);
 
         if (isGrounded && velocity.y < 0)
         {
@@ -53,12 +53,12 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             speed = walkSpeed;
         }
-        
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-        if(direction.magnitude >= 0.1f)
+        if (direction.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
@@ -69,12 +69,12 @@ public class ThirdPersonMovement : MonoBehaviour
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
 
-        if(!isGrounded)
+        if (!isGrounded)
         {
             animator.SetBool("isJumping", true);
         }
 
-        if(Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
             animator.SetBool("isJumping", true);
@@ -83,5 +83,19 @@ public class ThirdPersonMovement : MonoBehaviour
         //gravity
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+
     }
+
+    public void Jump()
+    {
+        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        animator.SetBool("isJumping", true);
+    }
+
+    public void Grind()
+    {
+        animator.SetBool("isJumping", true);
+    }
+    
 }
