@@ -6253,6 +6253,68 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &888846661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 888846662}
+  - component: {fileID: 888846663}
+  m_Layer: 0
+  m_Name: Spline Loop Player 2 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &888846662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888846661}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1963503918}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &888846663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888846661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d576f67e71bb4478e3f4fb8abce560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - {x: 3.7068996, y: 1.2964282, z: -8.916979}
+  - {x: 1.7917061, y: 1.2964282, z: -7.8553257}
+  - {x: 0.46291828, y: 0.74702644, z: -1.1509933}
+  - {x: -3.3946075, y: 3.5461502, z: 0}
+  - {x: -4.9217415, y: 4.635351, z: 0.47019196}
+  - {x: -7.522313, y: 5.024292, z: 0.38531494}
+  - {x: -9.525919, y: 5.303713, z: -3.1374016}
+  - {x: -10.729523, y: 5.4727125, z: -5.2674026}
+  - {x: -16.786036, y: 5.303713, z: -23.8792}
+  - {x: -11.502165, y: 5.303713, z: -28.741497}
+  - {x: -9.08153, y: 5.303713, z: -31.323532}
+  - {x: -10.089067, y: 9.383892, z: -31.146244}
+  - {x: -10.046253, y: 9.383892, z: -36.145546}
+  - {x: -9.046253, y: 9.383892, z: -40.881935}
+  - {x: 4.846978, y: 9.383892, z: -37.48249}
+  - {x: 5.846978, y: 9.383892, z: -37.48431}
+  modes: 000000000000000000000000000000000000000000000000
+  loop: 0
 --- !u!1 &915606799
 GameObject:
   m_ObjectHideFlags: 3
@@ -7712,6 +7774,7 @@ Transform:
   - {fileID: 1966253721}
   - {fileID: 1804128904}
   - {fileID: 1097838358}
+  - {fileID: 888846662}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

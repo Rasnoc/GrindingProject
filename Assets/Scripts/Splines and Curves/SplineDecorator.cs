@@ -3,7 +3,7 @@
 public class SplineDecorator : MonoBehaviour {
 
 	public BezierSpline spline;
-	public BezierSpline playerSpline;
+	public BezierSpline playerSpline = null;
 
 	public int frequency;
 
